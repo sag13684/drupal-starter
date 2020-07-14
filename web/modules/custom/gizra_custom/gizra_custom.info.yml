@@ -1,0 +1,6 @@
+name: Gizra Custom
+description: Alter hooks and custom classes.
+package: Gizra
+
+core: 8.x
+type: module
