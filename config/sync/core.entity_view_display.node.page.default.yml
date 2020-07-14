@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.og_audience
     - node.type.page
   module:
     - text
@@ -24,5 +25,13 @@ content:
     third_party_settings: {  }
   links:
     weight: 101
+    region: content
+  og_audience:
+    label: above
+    type: entity_reference_label
+    settings:
+      link: true
+    weight: 102
+    third_party_settings: {  }
     region: content
 hidden: {  }

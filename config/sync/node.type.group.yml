@@ -1,0 +1,17 @@
+uuid: 97dc245b-e3df-47e1-b6ea-6abc66d13f2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Group
+type: group
+description: 'Use this content type to create groups.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
