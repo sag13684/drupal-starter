@@ -15,9 +15,8 @@ class GizraCustomWebDriverTest extends ExistingSiteBase {
   /**
    * Test Group join link text.
    *
-   * @throws \Behat\Mink\Exception\ElementNotFoundException
-   * @throws \Behat\Mink\Exception\ExpectationException
-   * @throws \Behat\Mink\Exception\ResponseTextException
+   * @throws \Drupal\Core\Entity\EntityMalformedException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function testGroupJoinLinkText() {
     // Create an authenticated user.
