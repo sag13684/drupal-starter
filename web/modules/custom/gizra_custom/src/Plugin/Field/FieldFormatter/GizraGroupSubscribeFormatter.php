@@ -15,17 +15,11 @@ use Drupal\user\EntityOwnerInterface;
  * @FieldFormatter(
  *   id = "gizra_custom_group_subscribe",
  *   label = @Translation("Gizra Group subscribe"),
- *   description = @Translation("Display Personalized OG Group subscribe and
- *   un-subscribe links."), field_types = {
+ *   description = @Translation("Display Personalized OG Group subscribe and un-subscribe links."),
+ *   field_types = {
  *     "og_group"
  *   }
  * )
- */
-
-/**
- * Class GizraGroupSubscribeFormatter.
- *
- * @package Drupal\gizra_custom\Plugin\Field\FieldFormatter
  */
 class GizraGroupSubscribeFormatter extends GroupSubscribeFormatter {
 
@@ -97,11 +91,19 @@ class GizraGroupSubscribeFormatter extends GroupSubscribeFormatter {
         $link['url'] = $url;
       }
       elseif (($access = $this->ogAccess->userAccess($group, 'subscribe', $user)) && $access->isAllowed()) {
-        $link['title'] = $this->t('Hi @username, click here if you would like to subscribe to this group called @title',
-          [
-            '@username' => $user->getAccountName(),
-            '@title' => $group->label(),
-          ]);
+        if ($user->id()) {
+          $link['title'] = $this->t('Hi @username, click here if you would like to subscribe to this group called @title',
+            [
+              '@username' => $user->getAccountName(),
+              '@title' => $group->label(),
+            ]);
+        }
+        else {
+          $link['title'] = $this->t('Hi, click here if you would like to subscribe to this group called @title',
+            [
+              '@title' => $group->label(),
+            ]);
+        }
         $link['class'] = ['subscribe', 'request'];
         $link['url'] = $url;
       }
